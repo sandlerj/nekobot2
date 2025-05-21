@@ -65,7 +65,7 @@ Basic command set:
 - [x] Implement image API integration
 - [x] Create basic keyword detection
 - [x] Add cooldown system
-- [ ] Test basic image responses
+- [x] Test basic image responses
 
 ### Phase 3: Enhancement
 - [ ] Add more sophisticated keyword matching
