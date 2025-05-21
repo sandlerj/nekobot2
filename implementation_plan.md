@@ -59,7 +59,7 @@ Basic command set:
 - [x] Set up project structure
 - [x] Implement basic Discord bot connection
 - [x] Create configuration system
-- [ ] Test basic connectivity
+- [x] Test basic connectivity
 
 ### Phase 2: Core Features
 - [x] Implement image API integration
