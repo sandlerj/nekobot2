@@ -1,0 +1,28 @@
+bot:
+  prefix: "!"
+  description: "A Discord bot that sends catgirls and anime gifs"
+
+cooldown:
+  global: 30  # Global cooldown in seconds
+
+reactions:
+  pat:
+    - "pat"
+    - "pet"
+    - "pats"
+  hug:
+    - "hug"
+    - "hugs"
+    - "cuddle"
+
+apis:
+  nekos_life:
+    base_url: "https://nekos.life/api/v2"
+    endpoints:
+      pat: "/img/pat"
+      hug: "/img/hug"
+  waifu_pics:
+    base_url: "https://api.waifu.pics/sfw"
+    endpoints:
+      pat: "/pat"
+      hug: "/hug"
