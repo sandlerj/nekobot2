@@ -1,6 +1,8 @@
 # NekoBot2
 
-The following was written/edited using AI
+<non-ai>
+The following was written/edited using AI. I'm using this as a *very* basic exploratory exercise using Copilot to generate most of the code here (rebuilding and expanding a project I previously POC'd)
+</non-ai>
 
 ## Overview
 NekoBot2 is a Discord bot project. This README provides basic setup instructions to get the bot running locally. For detailed information on deploying a bot to a Discord server (guild), please refer to the [official Discord bot documentation](https://discord.com/developers/docs/intro).
