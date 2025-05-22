@@ -1,10 +1,5 @@
 # NekoBot2
 
-<non-ai>
-DISCLAIMER:
-The following was written/edited using AI. I'm using this as a *very* basic exploratory exercise using Copilot to generate most of the code here (rebuilding and expanding a project I previously POC'd).
-</non-ai>
-
 ## Overview
 🌸 **Welcome to NekoBot2, nya~!** 🌸
 
@@ -60,3 +55,9 @@ NekoBot2 is a super cute Discord bot project, nya! 🐾 This README will help yo
 
 ![Anime thumbs up gif](https://i.waifu.pics/GM-EXJN.gif)
 > All done, nya! Good luck and have fun, master~! (｡•̀ᴗ-)✧
+
+
+<non-ai>
+DISCLAIMER:
+The following was written/edited using AI. I'm using this as a *very* basic exploratory exercise using Copilot to generate most of the code here (rebuilding and expanding a project I previously POC'd).
+</non-ai>
