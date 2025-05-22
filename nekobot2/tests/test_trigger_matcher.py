@@ -43,10 +43,10 @@ async def test_find_matches_basic(matcher):
 @pytest.mark.asyncio
 async def test_find_matches_alias(matcher):
     """Test matching works with aliases"""
-    content = "Time to give pets"
+    content = "Time to give pats"
     matches = await matcher.find_matches(content)
     assert len(matches) == 1
-    assert matches[0].trigger == "pet"
+    assert matches[0].trigger == "pats"
     assert matches[0].reaction_type == "pat"
 
 @pytest.mark.asyncio

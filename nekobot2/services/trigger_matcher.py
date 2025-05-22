@@ -42,7 +42,7 @@ class TriggerMatcher:
                 if trigger_text:
                     self._add_trigger(trigger_text, reaction_type)
             
-            # Get aliases
+            # Get aliases - Fix: Actually add the aliases to triggers
             aliases = reaction_config.get('aliases', [])
             for alias in aliases:
                 self._add_trigger(alias, reaction_type)
@@ -54,10 +54,11 @@ class TriggerMatcher:
             trigger: The trigger word/phrase
             reaction_type: The type of reaction this trigger should produce
         """
-        trigger = trigger.lower()
+        trigger = trigger.lower()  # Convert to lowercase for case-insensitive matching
         if trigger not in self.triggers:
             self.triggers[trigger] = set()
         self.triggers[trigger].add(reaction_type)
+        logger.debug(f"Added trigger '{trigger}' for reaction type '{reaction_type}'")
         
     async def find_matches(self, content: str) -> List[Match]:
         """Find all trigger word matches in the given content
@@ -69,19 +70,19 @@ class TriggerMatcher:
             List of Match objects for any triggers found
         """
         matches = []
-        content = content.lower()
+        content = content.lower()  # Convert to lowercase for case-insensitive matching
         words = content.split()
         
         for word in words:
             if word in self.triggers:
                 for reaction_type in self.triggers[word]:
+                    start_pos = content.find(word)
                     match = Match(
                         trigger=word,
                         reaction_type=reaction_type,
                         matched_text=word,
-                        # Basic position tracking - can be enhanced later
-                        start_pos=content.find(word),
-                        end_pos=content.find(word) + len(word)
+                        start_pos=start_pos,
+                        end_pos=start_pos + len(word)
                     )
                     matches.append(match)
                     
