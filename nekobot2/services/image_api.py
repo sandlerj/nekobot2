@@ -26,12 +26,18 @@ class ImageAPIService:
             
     async def get_image(self, reaction_type: str) -> Optional[str]:
         """Fetch an image URL for the given reaction type"""
-        apis = ['nekos_life', 'waifu_pics']  # List of available APIs
+        apis_config = self.config.get('apis', {})
+
+        if not apis_config:
+            raise ValueError("No API configuration found in the config file.")
+        
+        apis = list(api_config.keys())
+        
         random.shuffle(apis)  # Randomize API selection for load distribution
         
         for api_name in apis:
             try:
-                api_config = self.config.get('apis', {}).get(api_name, {})
+                api_config = apis_config.get(api_name, {})
                 if not api_config:
                     continue
                     
