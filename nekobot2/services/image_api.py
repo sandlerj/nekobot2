@@ -26,7 +26,7 @@ class ImageAPIService:
             
     async def get_image(self, reaction_type: str) -> Optional[str]:
         """Fetch an image URL for the given reaction type"""
-        apis = ['nekos_life', 'waifu_pics']
+        apis = ['nekos_life', 'waifu_pics']  # List of available APIs
         random.shuffle(apis)  # Randomize API selection for load distribution
         
         for api_name in apis:

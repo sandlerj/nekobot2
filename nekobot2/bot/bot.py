@@ -11,9 +11,9 @@ logger = logging.getLogger(__name__)
 class NekoBot(commands.Bot):
     """Main bot class for Nekobot that handles Discord events and commands"""
     
-    def __init__(self):
+    def __init__(self, config_path: str = "config/config.yaml"):
         """Initialize the bot with required intents and command prefix"""
-        self.config_loader = ConfigLoader()
+        self.config_loader = ConfigLoader(config_path=config_path)
         self.config = self.config_loader.load_config()
         
         intents = discord.Intents.default()

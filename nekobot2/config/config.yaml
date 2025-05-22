@@ -40,7 +40,7 @@ apis:
       pat: "/img/pat"
       hug: "/img/hug"
       kiss: "/img/kiss"
-      baka: "/img/baka"
+      baka: "/img/slap"
       gecg: "/img/gecg"
   waifu_pics:
     base_url: "https://api.waifu.pics"
