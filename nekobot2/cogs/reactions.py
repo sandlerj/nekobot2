@@ -4,9 +4,9 @@ import discord
 from discord.ext import commands
 import logging
 from services.image_api import ImageAPIService
-from typing import Dict, Set
-from datetime import datetime, timedelta 
-from typing import Optional
+from services.trigger_matcher import TriggerMatcher
+from typing import Dict, Optional
+from datetime import datetime, timedelta
 
 logger = logging.getLogger(__name__)
 
@@ -17,17 +17,9 @@ class ReactionHandler(commands.Cog):
         self.bot = bot
         self.config = bot.config
         self.image_service = ImageAPIService(self.config)
-        self.reaction_triggers: Dict[str, Set[str]] = {}
+        self.trigger_matcher = TriggerMatcher(self.config)
         self.muted_until: Optional[datetime] = None
-        self._load_triggers()
         
-    def _load_triggers(self):
-        """Load reaction triggers from config"""
-        reactions = self.config.get('reactions', {})
-        for reaction_type, triggers in reactions.items():
-            for trigger in triggers:
-                self.reaction_triggers[trigger.lower()] = reaction_type
-    
     async def cog_load(self):
         """Initialize services when cog is loaded"""
         await self.image_service.initialize()
@@ -46,13 +38,11 @@ class ReactionHandler(commands.Cog):
         if self.muted_until and datetime.now() < self.muted_until:
             return
             
-        # Check message content against triggers
-        words = message.content.lower().split()
-        for word in words:
-            if word in self.reaction_triggers:
-                reaction_type = self.reaction_triggers[word]
-                await self._send_reaction(message, reaction_type)
-                break
+        # Check for trigger matches
+        matches = await self.trigger_matcher.find_matches(message.content)
+        for match in matches:
+            await self._send_reaction(message, match.reaction_type)
+            break  # Only send one reaction per message
                 
     async def _send_reaction(self, message: discord.Message, reaction_type: str):
         """Send a reaction image for the given type"""
