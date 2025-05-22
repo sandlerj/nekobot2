@@ -3,7 +3,7 @@ bot:
   description: "A Discord bot that sends catgirls and anime gifs"
 
 cooldown:
-  global: 30  # Global cooldown in seconds
+  global: 3600  # Global cooldown in seconds
 
 reactions:
   pat:
@@ -14,6 +14,24 @@ reactions:
     - "hug"
     - "hugs"
     - "cuddle"
+    - "glomp"
+  baka:
+    - "stupid"
+    - "dumb"
+    - "idiot"
+    - "baka"
+  cringe:
+    - "embarass"
+    - "embarassing"
+    - "cringe"
+    - "cringey"
+  gecg:
+    - "gecg"
+    - "not like the other girls"
+    - "made in a lab"
+  trap:
+    - "trap"
+    - "tranny"
 
 apis:
   nekos_life:
@@ -21,8 +39,15 @@ apis:
     endpoints:
       pat: "/img/pat"
       hug: "/img/hug"
+      kiss: "/img/kiss"
+      baka: "/img/baka"
+      gecg: "/img/gecg"
   waifu_pics:
-    base_url: "https://api.waifu.pics/sfw"
+    base_url: "https://api.waifu.pics"
     endpoints:
-      pat: "/pat"
-      hug: "/hug"
+      pat: "/sfw/pat"
+      hug: "/sfw/glomp"
+      kiss: "/sfw/kiss"
+      baka: "/sfw/bully"
+      cringe: "/sfw/cringe"
+      trap: "/nsfw/trap"

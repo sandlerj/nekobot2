@@ -51,7 +51,12 @@ NekoBot2 is a super cute Discord bot project, nya! 🐾 This README will help yo
 
 ## Notes
 - Make sure your bot is invited to your Discord server and has the necessary permissions, okay nya? 🐱
-- For advanced configuration, check out the `config/config.yaml` file, meow~
+- For advanced configuration, check out the `config/config.yaml` file, meow~ ⚙️
+- The bot needs a restart to load config changes, gomenasai~ (｡•́︿•̀｡) Just run the command again:
+  ```sh
+  python nekobot2/main.py
+  ```
+  Nyaa~ config will be reloaded! ✨
 
 ![Anime thumbs up gif](https://i.waifu.pics/GM-EXJN.gif)
 > All done, nya! Good luck and have fun, master~! (｡•̀ᴗ-)✧

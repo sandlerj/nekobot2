@@ -69,7 +69,7 @@ Basic command set:
 
 ### Phase 3: Enhancement
 - [ ] Add more sophisticated keyword matching
-- [ ] Implement all planned commands
+- [x] Implement all planned commands
 - [ ] Add additional image sources
 - [x] Implement error handling and logging
 

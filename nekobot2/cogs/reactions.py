@@ -69,7 +69,7 @@ class ReactionHandler(commands.Cog):
     
     @commands.command(name="be-quiet")
     async def be_quiet(self, ctx: commands.Context, waitTime: Optional[int]):
-        """Mutes the bot for 30 seconds"""
+        """Mutes the bot for given seconds"""
         wait_seconds = waitTime if waitTime != None else self.config.get("cooldown", {}).get("global", 30)
         self.muted_until = datetime.now() + timedelta(seconds=wait_seconds)
         await ctx.send(f"I'll be quiet for {wait_seconds} seconds :(")
@@ -79,6 +79,8 @@ class ReactionHandler(commands.Cog):
         """List all available reaction triggers"""
         triggers_by_type = {}
         for trigger, reaction_type in self.reaction_triggers.items():
+            if reaction_type.startswith("trap"): 
+                continue
             if reaction_type not in triggers_by_type:
                 triggers_by_type[reaction_type] = []
             triggers_by_type[reaction_type].append(trigger)
@@ -95,6 +97,51 @@ class ReactionHandler(commands.Cog):
                 inline=False
             )
             
+        await ctx.send(embed=embed)
+
+    @commands.command(name="neko-help")
+    async def reactions_help(self, ctx: commands.Context):
+        """Shows detailed help about reaction commands and features"""
+        embed = discord.Embed(
+            title="Reactions Help",
+            description="This bot responds to certain trigger words with reaction images!",
+            color=discord.Color.blue()
+        )
+
+        # Commands section
+        commands_text = (
+            "`!neko-help` - Shows this help message\n"
+            "`!triggers` - Lists all available reaction triggers\n"
+            "`!be-quiet [seconds]` - Mutes reactions for specified seconds (default: 30)"
+        )
+        embed.add_field(
+            name="Commands",
+            value=commands_text,
+            inline=False
+        )
+
+        # How it works section
+        usage_text = (
+            "Simply include any trigger word in your message and "
+            "the bot will respond with a matching reaction image!\n"
+            "For example, saying 'headpat' will trigger a patting reaction."
+        )
+        embed.add_field(
+            name="How it Works",
+            value=usage_text,
+            inline=False
+        )
+
+        # Add reaction categories
+        categories = set(filter(lambda x: x != "trap", self.reaction_triggers.values()))
+        categories_text = ", ".join(f"`{cat}`" for cat in categories)
+        embed.add_field(
+            name="Available Reaction Types",
+            value=categories_text,
+            inline=False
+        )
+
+        embed.set_footer(text="Use !triggers to see all trigger words")
         await ctx.send(embed=embed)
 
 async def setup(bot: commands.Bot):
