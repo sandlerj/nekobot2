@@ -1,46 +1,62 @@
 # NekoBot2
 
 <non-ai>
-The following was written/edited using AI. I'm using this as a *very* basic exploratory exercise using Copilot to generate most of the code here (rebuilding and expanding a project I previously POC'd)
+DISCLAIMER:
+The following was written/edited using AI. I'm using this as a *very* basic exploratory exercise using Copilot to generate most of the code here (rebuilding and expanding a project I previously POC'd).
 </non-ai>
 
 ## Overview
-NekoBot2 is a Discord bot project. This README provides basic setup instructions to get the bot running locally. For detailed information on deploying a bot to a Discord server (guild), please refer to the [official Discord bot documentation](https://discord.com/developers/docs/intro).
+🌸 **Welcome to NekoBot2, nya~!** 🌸
+
+NekoBot2 is a super cute Discord bot project, nya! 🐾 This README will help you get started with setting it up locally, meow~ If you want to learn how to deploy your bot to a Discord server (guild), check out the [official Discord bot documentation](https://discord.com/developers/docs/intro), okay nya? ✨
+
+![Anime waving gif](https://i.waifu.pics/iC7niFP.gif)
 
 ## Prerequisites
-- Python 3.8 or higher
-- [pip](https://pip.pypa.io/en/stable/)
+- 🐾 Python 3.8 or higher, nya!
+- 🐾 [pip](https://pip.pypa.io/en/stable/), meow~
 
 ## Setup Instructions
 
-1. **Clone the repository**
+1. **Clone the repository, nya!**
    ```sh
    git clone <your-repo-url>
    cd nekobot2
    ```
+   ![Anime typing gif](https://i.waifu.pics/iC7niFP.gif)
+   > UwU Let's get started, nya~
 
-2. **Install dependencies**
+2. **Install dependencies, meow!**
    ```sh
    pip install -r requirements.txt
    ```
+   ![Anime installing gif](https://i.waifu.pics/jGcj2CQ.gif)
+   > Don't forget your dependencies, nya~ 🧶
 
-3. **Set up environment variables**
-   - Create a `.env` file in the root directory of the project.
+3. **Set up environment variables, nya!**
+   - Create a `.env` file in the root directory, okay nya?
    - Add your Discord bot token to the `.env` file:
      ```env
      DISCORD_TOKEN=your-bot-token-here
      ```
-   - You can find or create your bot token by following the [official Discord bot setup guide](https://discord.com/developers/docs/intro).
+   - You can find or create your bot token by following the [official Discord bot setup guide](https://discord.com/developers/docs/intro), meow~
+     ![Anime pat gif](https://i.waifu.pics/Z5pp~gx.gif)
+   > So comfy! Don't lose your token, nya~
 
-4. **Run the bot**
-   - Start the bot using the following command:
+4. **Run the bot, nya!**
+   - Start the bot using this command, meow:
      ```sh
      python nekobot2/main.py
      ```
+   ![Anime happy gif](https://i.waifu.pics/-iw0hlg.gif)
+   > Your bot is ready to play, nya! (≧◡≦) ♡
 
 ## Additional Resources
-- [Official Discord Bot Documentation](https://discord.com/developers/docs/intro)
+- [Official Discord Bot Documentation](https://discord.com/developers/docs/intro) nya~
 
 ## Notes
-- Make sure your bot is invited to your Discord server and has the necessary permissions.
-- For advanced configuration, refer to the `config/config.yaml` file.
+- Make sure your bot is invited to your Discord server and has the necessary permissions, okay nya? 🐱
+- For advanced configuration, check out the `config/config.yaml` file, meow~
+
+![Anime thumbs up gif](https://i.waifu.pics/GM-EXJN.gif)
+> All done, nya! Good luck and have fun, master~! (｡•̀ᴗ-)✧
