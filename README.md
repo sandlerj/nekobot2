@@ -18,7 +18,7 @@ NekoBot2 is a super cute Discord bot project, nya! 🐾 This README will help yo
    git clone <your-repo-url>
    cd nekobot2
    ```
-   ![Anime typing gif](https://i.waifu.pics/iC7niFP.gif)
+   ![Anime yeet gif](https://i.waifu.pics/WR5_scs.gif)
    > UwU Let's get started, nya~
 
 2. **Install dependencies, meow!**
